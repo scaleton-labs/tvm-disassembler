@@ -13,10 +13,12 @@ function decompileCell(args: {
     root: boolean,
     writer: Writer,
     printer: Printer,
-    callRefExtractor?: (ref: Cell) => string
+    callRefExtractor?: (ref: Cell) => string,
+    extraKnownMethods?: { [key: number]: string },
 }) {
     const printer = args.printer;
     const writer = args.writer;
+    const extraKnownMethods = args.extraKnownMethods || {};
     const opcodes = decompile({
         src: args.src,
         offset: args.offset,
@@ -61,7 +63,8 @@ function decompileCell(args: {
                         root: false,
                         writer: w,
                         callRefExtractor: extractCallRef,
-                        printer: args.printer
+                        printer: args.printer,
+                        extraKnownMethods,
                     });
                 });
             });
@@ -71,7 +74,7 @@ function decompileCell(args: {
 
         let extractedDict = new Map<number, { name: string, rendered: string, src: Cell, srcOffset: number }>();
         for (let [key, value] of dict) {
-            let name = knownMethods[key] || '?fun_' + key;
+            let name = extraKnownMethods[key] || knownMethods[key] || '?fun_' + key;
             let w = new Writer();
             w.inIndent(() => {
                 w.inIndent(() => {
@@ -82,7 +85,8 @@ function decompileCell(args: {
                         root: false,
                         writer: w,
                         callRefExtractor: extractCallRef,
-                        printer: args.printer
+                        printer: args.printer,
+                        extraKnownMethods,
                     });
                 });
             });
@@ -168,7 +172,8 @@ function decompileCell(args: {
                     root: false,
                     writer: writer,
                     callRefExtractor: args.callRefExtractor,
-                    printer: args.printer
+                    printer: args.printer,
+                    extraKnownMethods,
                 });
             })
             opstr = '}> ' + op.op.code;
@@ -197,7 +202,8 @@ function decompileCell(args: {
                     root: false,
                     writer: writer,
                     callRefExtractor: args.callRefExtractor,
-                    printer: args.printer
+                    printer: args.printer,
+                    extraKnownMethods,
                 });
             })
             opstr = '}> ' + opcode.code;
@@ -217,7 +223,11 @@ function decompileCell(args: {
     }
 }
 
-export function decompileAll(args: { src: Buffer | Cell, printer?: Maybe<Printer> }) {
+export function decompileAll(args: {
+    src: Buffer | Cell,
+    printer?: Maybe<Printer>,
+    extraKnownMethods?: { [key: number]: string },
+}) {
     let writer = new Writer();
     let src: Cell;
     if (Buffer.isBuffer(args.src)) {
@@ -232,7 +242,8 @@ export function decompileAll(args: { src: Buffer | Cell, printer?: Maybe<Printer
         limit: null,
         root: true,
         writer,
-        printer
+        printer,
+        extraKnownMethods: args.extraKnownMethods,
     });
     return writer.end();
 }

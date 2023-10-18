@@ -59,6 +59,17 @@ describe('decompileAll', () => {
         expect(res).toMatchSnapshot();
     });
 
+    it('should decompile echo using extraKnownMethods', () => {
+        const wallet = fs.readFileSync(__dirname + '/__testdata__/echo_Echo.code.boc');
+        let res = decompileAll({
+            src: wallet,
+            extraKnownMethods: {
+                [115554]: '%hello',
+            }
+        });
+        expect(res).toMatchSnapshot();
+    });
+
     it('should decompile wallet', () => {
         const wallet = fs.readFileSync(__dirname + '/__testdata__/wallet_Wallet.code.boc');
         let res = decompileAll({ src: wallet });

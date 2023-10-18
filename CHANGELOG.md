@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
+## Changed
 - Migrated to @ton org libraries and upgraded tvm-disassembler version
+- Migrated to @scaleton org
+
+## Added
+- Argument `extraKnownMethods` both to `decompileAll` and `decompileCell`
 
 ## [0.0.13] - 2023-04-08
 
