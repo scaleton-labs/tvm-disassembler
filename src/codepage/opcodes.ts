@@ -5,7 +5,9 @@ const CP0Auto = new Codepage();
 
 CP0Auto.insertHex('0', 4, (slice) => {
     let n = slice.loadUint(4);
-    return { code: 'XCHG', args: [0, n] };
+    return n === 1
+        ? { code: 'SWAP' }
+        : { code: 'XCHG', args: [0, n] };
 });
 CP0Auto.insertHex('1', 4, (slice) => {
     let n = slice.loadUint(4);
@@ -22,11 +24,15 @@ CP0Auto.insertHex('1', 4, (slice) => {
 })
 CP0Auto.insertHex('2', 4, (slice) => {
     let n = slice.loadUint(4);
-    return { code: 'PUSH', args: [n] };
+    return n === 0 ? { code: 'DUP' }
+        : n === 1 ? { code: 'OVER' }
+            : { code: 'PUSH', args: [n] };
 })
 CP0Auto.insertHex('3', 4, (slice) => {
     let n = slice.loadUint(4);
-    return { code: 'POP', args: [n] };
+    return n === 1
+        ? { code: 'NIP'}
+        : { code: 'POP', args: [n] };
 })
 CP0Auto.insertHex('4', 4, (slice) => {
     let i = slice.loadUint(4);
@@ -168,7 +174,9 @@ CP0Auto.insertHex('6d', 8, { code: 'NULL' });
 CP0Auto.insertHex('6e', 8, { code: 'ISNULL' });
 CP0Auto.insertHex('6f0', 12, (slice) => {
     let n = slice.loadUint(4);
-    return { code: 'TUPLE', args: [n] };
+    return n > 0
+        ? { code: 'TUPLE', args: [n] }
+        : { code: 'NIL' };
 });
 CP0Auto.insertHex('6f1', 12, (slice) => {
     let k = slice.loadUint(4);
@@ -1124,11 +1132,11 @@ CP0Auto.insertHex('f832', 16, { code: 'CONFIGPARAM' });
 CP0Auto.insertHex('f833', 16, { code: 'CONFIGOPTPARAM' });;
 CP0Auto.insertHex('f841', 11, (slice) => {
     let i = slice.loadUint(5);
-    return { code: `GETGLOBVAR`, args: [i] };
+    return { code: `GETGLOB`, args: [i] };
 });
 CP0Auto.insertHex('f861', 11, (slice) => {
     let i = slice.loadUint(5);
-    return { code: `SETGLOBVAR`, args: [i] };
+    return { code: `SETGLOB`, args: [i] };
 });
 CP0Auto.insertHex('f900', 16, { code: 'HASHCU' });
 CP0Auto.insertHex('f901', 16, { code: 'HASHSU' });

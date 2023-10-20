@@ -3,8 +3,8 @@ import { opcodeToString } from "../codepage/opcodeToString";
 import { Maybe } from "../utils/maybe";
 import { Writer } from "../utils/Writer";
 import { decompile } from "./decompiler";
-import { knownMethods } from "./knownMethods";
 import { createTextPrinter, Printer } from "./printer";
+import type { DebugSymbols } from '@scaleton/func-debug-symbols';
 
 function decompileCell(args: {
     src: Cell,
@@ -14,11 +14,12 @@ function decompileCell(args: {
     writer: Writer,
     printer: Printer,
     callRefExtractor?: (ref: Cell) => string,
-    extraKnownMethods?: { [key: number]: string },
+    debugSymbols: DebugSymbols,
 }) {
     const printer = args.printer;
     const writer = args.writer;
-    const extraKnownMethods = args.extraKnownMethods || {};
+    const debugSymbols = args.debugSymbols;
+
     const opcodes = decompile({
         src: args.src,
         offset: args.offset,
@@ -49,7 +50,9 @@ function decompileCell(args: {
             }
 
             // Add name to a map and assign name
-            let name = '?fun_ref_' + cell.hash().toString('hex').substring(0, 16);
+            const cellHash = cell.hash().toString('hex');
+            const name = debugSymbols.procedures.find(proc => proc.cellHash === cellHash)?.name ?? `?fun_ref_${cellHash.substring(0, 16)}`;
+
             callRefs.set(k, name);
 
             // Render cell
@@ -64,7 +67,7 @@ function decompileCell(args: {
                         writer: w,
                         callRefExtractor: extractCallRef,
                         printer: args.printer,
-                        extraKnownMethods,
+                        debugSymbols,
                     });
                 });
             });
@@ -74,7 +77,7 @@ function decompileCell(args: {
 
         let extractedDict = new Map<number, { name: string, rendered: string, src: Cell, srcOffset: number }>();
         for (let [key, value] of dict) {
-            let name = extraKnownMethods[key] || knownMethods[key] || '?fun_' + key;
+            const name = debugSymbols.procedures.find(proc => proc.methodId === key)?.name ?? `?fun_${key}`;
             let w = new Writer();
             w.inIndent(() => {
                 w.inIndent(() => {
@@ -86,7 +89,7 @@ function decompileCell(args: {
                         writer: w,
                         callRefExtractor: extractCallRef,
                         printer: args.printer,
-                        extraKnownMethods,
+                        debugSymbols,
                     });
                 });
             });
@@ -173,7 +176,7 @@ function decompileCell(args: {
                     writer: writer,
                     callRefExtractor: args.callRefExtractor,
                     printer: args.printer,
-                    extraKnownMethods,
+                    debugSymbols,
                 });
             })
             opstr = '}> ' + op.op.code;
@@ -203,10 +206,17 @@ function decompileCell(args: {
                     writer: writer,
                     callRefExtractor: args.callRefExtractor,
                     printer: args.printer,
-                    extraKnownMethods,
+                    debugSymbols,
                 });
             })
             opstr = '}> ' + opcode.code;
+            writer.append(printer({ op: opstr, offset: op.offset, length: op.length, hash: op.hash }, writer.indent));
+            continue;
+        }
+
+        if (opcode.code === 'GETGLOB' || opcode.code === 'SETGLOB') {
+            const name = debugSymbols.globals.find(glob => glob.index === opcode.args[0])?.name;
+            const opstr = `${name ?? opcode.args[0]} ${opcode.code}`;
             writer.append(printer({ op: opstr, offset: op.offset, length: op.length, hash: op.hash }, writer.indent));
             continue;
         }
@@ -226,7 +236,7 @@ function decompileCell(args: {
 export function decompileAll(args: {
     src: Buffer | Cell,
     printer?: Maybe<Printer>,
-    extraKnownMethods?: { [key: number]: string },
+    debugSymbols?: DebugSymbols,
 }) {
     let writer = new Writer();
     let src: Cell;
@@ -243,7 +253,10 @@ export function decompileAll(args: {
         root: true,
         writer,
         printer,
-        extraKnownMethods: args.extraKnownMethods,
+        debugSymbols: args.debugSymbols ?? {
+            procedures: [],
+            globals: [],
+        },
     });
     return writer.end();
 }

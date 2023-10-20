@@ -130,6 +130,10 @@ export function isOpCodeWithArgs(op: OpCode): op is OpCodeWithArgs {
 }
 
 export type OpCodeNoArgs = 
+    | { code: 'SWAP' }
+    | { code: 'DUP' }
+    | { code: 'OVER' }
+    | { code: 'NIP' }
     | { code: 'ROT' }
     | { code: 'ROTREV' }
     | { code: 'SWAP2' }
@@ -150,6 +154,7 @@ export type OpCodeNoArgs =
     | { code: 'REVX' }
     | { code: 'NULL' }
     | { code: 'ISNULL' }
+    | { code: 'NIL' }
     | { code: 'CHKTUPLE' }
     | { code: 'TUPLEVAR' }
     | { code: 'INDEXVAR' }

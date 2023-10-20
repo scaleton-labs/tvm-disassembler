@@ -7,6 +7,10 @@ opcodes:
   PUSH2: ["int", "int"]
   PUSH3: ["int", "int", "int"]
   POP: ["int"]
+  SWAP:
+  DUP:
+  OVER:
+  NIP:
 
   # A.2.2. Compound stack manipulation primitives.
   XCPU: ["int", "int"]
@@ -49,6 +53,7 @@ opcodes:
 
   # A.3.2. Tuple primitives.
   TUPLE: ["int"]
+  NIL:
   INDEX: ["int"]
   UNTUPLE: ["int"]
   UNPACKFIRST: ["int"]
