@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Function `decompileAll(...)` accepts only `Cell` and returns an AST (instead of `string`).
+- Function `decompileCell(...)` completely refactored to build AST instead of printing code.
+
+### Added
+
+- Added `AssemblerWriter` to generate Fift Assembler from AST.
+
 ## [0.1.1] - 2023-10-20
 
 ### Added
@@ -13,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Improved alias recognition (`s1 PUSH` -> `OVER`, `s0 s1 XCHG` -> `SWAP`, etc.) 
+- Improved alias recognition (`s1 PUSH` -> `OVER`, `s0 s1 XCHG` -> `SWAP`, etc.)
 
 ### Removed
 

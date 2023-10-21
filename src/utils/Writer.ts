@@ -1,41 +1,33 @@
-import { trimIndent } from './text';
 export class Writer {
-    #indent = 0;
-    #lines: string[] = [];
+  #indent = 0;
+  #lines: string[] = [];
 
-    get indent() {
-        return this.#indent;
+  indent = (handler: () => void) => {
+    this.#indent++;
+    try {
+      handler();
+    } finally {
+      this.#indent--;
     }
+  };
 
-    inIndent = (handler: () => void) => {
-        this.#indent++;
-        try {
-            handler();
-        } finally {
-            this.#indent--;
-        }
-    };
+  #currentLine = '';
 
-    append(src: string = '') {
-        this.#lines.push(src);
-    }
+  write(src: string) {
+    this.#currentLine += src;
+  }
 
-    // appendNoIndent(src: string = '') {
-    //     this.#lines.push(src);
-    // }
+  newLine() {
+    this.#lines.push(' '.repeat(this.#indent * 2) + this.#currentLine);
+    this.#currentLine = '';
+  }
 
-    // append(src: string = '') {
-    //     this.appendNoIndent(' '.repeat(this.#indent * 2) + src);
-    // }
+  writeLine(src: string) {
+    this.#lines.push(' '.repeat(this.#indent * 2) + this.#currentLine + src);
+    this.#currentLine = '';
+  }
 
-    // write(src: string) {
-    //     let lines = trimIndent(src).split('\n');
-    //     for (let l of lines) {
-    //         this.append(l);
-    //     }
-    // }
-
-    end() {
-        return this.#lines.join('\n');
-    }
+  end() {
+    return this.#lines.join('\n');
+  }
 }

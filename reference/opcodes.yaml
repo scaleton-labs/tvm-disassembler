@@ -1,38 +1,38 @@
 opcodes:
   # A.2.1. Basic stack manipulation primitives.
-  XCHG: ["int", "int"]
-  XCHG2: ["int", "int"]
-  XCHG3: ["int", "int", "int"]
-  PUSH: ["int"]
-  PUSH2: ["int", "int"]
-  PUSH3: ["int", "int", "int"]
-  POP: ["int"]
+  XCHG: ['int', 'int']
+  XCHG2: ['int', 'int']
+  XCHG3: ['int', 'int', 'int']
+  PUSH: ['int']
+  PUSH2: ['int', 'int']
+  PUSH3: ['int', 'int', 'int']
+  POP: ['int']
   SWAP:
   DUP:
   OVER:
   NIP:
 
   # A.2.2. Compound stack manipulation primitives.
-  XCPU: ["int", "int"]
-  XCPU2: ["int", "int", "int"]
-  XCPUXC: ["int", "int", "int"]
-  XC2PU: ["int", "int", "int"]
-  PUXC: ["int", "int"]
-  PUXC2: ["int", "int", "int"]
-  PU2XC: ["int", "int", "int"]
-  PUXCPU: ["int", "int", "int"]
+  XCPU: ['int', 'int']
+  XCPU2: ['int', 'int', 'int']
+  XCPUXC: ['int', 'int', 'int']
+  XC2PU: ['int', 'int', 'int']
+  PUXC: ['int', 'int']
+  PUXC2: ['int', 'int', 'int']
+  PU2XC: ['int', 'int', 'int']
+  PUXCPU: ['int', 'int', 'int']
 
   # A.2.3. Exotic stack manipulation primitives.
-  BLKSWAP: ["int", "int"]
+  BLKSWAP: ['int', 'int']
   ROT:
   ROTREV:
   SWAP2:
   DROP2:
   DUP2:
   OVER2:
-  REVERSE: ["int", "int"]
-  BLKDROP: ["int"]
-  BLKPUSH: ["int", "int"]
+  REVERSE: ['int', 'int']
+  BLKDROP: ['int']
+  BLKPUSH: ['int', 'int']
   PICK:
   BLKSWX:
   DROPX:
@@ -42,26 +42,26 @@ opcodes:
   CHKDEPTH:
   ONLYTOPX:
   ONLYX:
-  BLKDROP2: ["int", "int"]
+  BLKDROP2: ['int', 'int']
   ROLLX:
   ROLLREVX:
   REVX:
 
   # A.3.1. Null primitives.
-  "NULL": []
+  'NULL': []
   ISNULL: []
 
   # A.3.2. Tuple primitives.
-  TUPLE: ["int"]
+  TUPLE: ['int']
   NIL:
-  INDEX: ["int"]
-  UNTUPLE: ["int"]
-  UNPACKFIRST: ["int"]
+  INDEX: ['int']
+  UNTUPLE: ['int']
+  UNPACKFIRST: ['int']
   CHKTUPLE:
-  EXPLODE: ["int"]
-  SETINDEX: ["int"]
-  INDEXQ: ["int"]
-  SETINDEXQ: ["int"]
+  EXPLODE: ['int']
+  SETINDEX: ['int']
+  INDEXQ: ['int']
+  SETINDEXQ: ['int']
   TUPLEVAR:
   INDEXVAR:
   UNTUPLEVAR:
@@ -84,41 +84,44 @@ opcodes:
   NULLSWAPIFNOT2:
   NULLROTRIF2:
   NULLROTRIFNOT2:
-  INDEX2: ["int", "int"]
+  INDEX2: ['int', 'int']
   CADR:
   CDDR:
   CADDR:
   CDDDR:
-  INDEX3: ["int", "int", "int"]
+  INDEX3: ['int', 'int', 'int']
 
   # A.4.1. Integer and boolean constants.
-  PUSHINT: ["bigint"]
-  PUSHPOW2: ["int"]
+  PUSHINT: ['bigint']
+  PUSHPOW2: ['int']
   PUSHNAN:
-  PUSHPOW2DEC: ["int"]
-  PUSHNEGPOW2: ["int"]
+  PUSHPOW2DEC: ['int']
+  PUSHNEGPOW2: ['int']
 
   # A.4.2. Constant slices, continuations, cells, and references.
-  PUSHREF: ["cell"]
-  PUSHREFSLICE: ["cell"]
-  PUSHREFCONT: ["cell"]
-  PUSHSLICE: ["cell", "int", "int", "int", "int"] # source ref,  offset bits, offset refs, bits, refs
-  PUSHCONT: ["cell", "int", "int", "int", "int"] # source ref, offset bits, offset refs, bits, refs
+  PUSHREF: ['cell']
+  PUSHREFSLICE: ['cell']
+  PUSHREFCONT: ['cell']
+  PUSHSLICE: ['cell', 'int', 'int', 'int', 'int'] # source ref,  offset bits, offset refs, bits, refs
+  PUSHCONT: ['cell', 'int', 'int', 'int', 'int'] # source ref, offset bits, offset refs, bits, refs
 
   # A.5.1. Addition, subtraction, multiplication.
   ADD:
   SUB:
   SUBR:
-  ADDCONST: ["int"]
-  MULCONST: ["int"]
+  NEGATE:
+  INC:
+  DEC:
+  ADDCONST: ['int']
+  MULCONST: ['int']
   MUL:
 
   # A.5.2. Division.
-  DIV: ["bool", "int", "bool", "int", "int"]
+  DIV: ['bool', 'int', 'bool', 'int', 'int']
 
   # A.5.3. Shifts, logical operations.
-  LSHIFT: ["int"]
-  RSHIFT: ["int"]
+  LSHIFT: ['int']
+  RSHIFT: ['int']
   LSHIFTX: []
   RSHIFTX: []
   POW2:
@@ -126,8 +129,8 @@ opcodes:
   OR:
   XOR:
   NOT:
-  FITS: ["int"]
-  UFITS: ["int"]
+  FITS: ['int']
+  UFITS: ['int']
   FITSX:
   UFITSX:
   BITSIZE:
@@ -149,15 +152,15 @@ opcodes:
   NEQ:
   GEQ:
   CMP:
-  EQINT: ["int"]
+  EQINT: ['int']
   ISZERO:
-  LESSINT: ["int"]
+  LESSINT: ['int']
   ISNEG:
   ISNPOS:
-  GTINT: ["int"]
+  GTINT: ['int']
   ISPOS:
   ISNNEG:
-  NEQINT: ["int"]
+  NEQINT: ['int']
   ISNAN:
   CHKNAN:
 
@@ -184,8 +187,8 @@ opcodes:
   # A.7.1. Cell serialization primitives.
   NEWC:
   ENDC:
-  STI: ["int"]
-  STU: ["int"]
+  STI: ['int']
+  STU: ['int']
   STREF:
   STBREFR:
   STSLICE:
@@ -197,12 +200,12 @@ opcodes:
   STUXQ:
   STIXRQ:
   STUXRQ:
-  STIR: ["int"]
-  STUR: ["int"]
-  STIQ: ["int"]
-  STUQ: ["int"]
-  STIRQ: ["int"]
-  STURQ: ["int"]
+  STIR: ['int']
+  STUR: ['int']
+  STIQ: ['int']
+  STUQ: ['int']
+  STIRQ: ['int']
+  STURQ: ['int']
   STBREF:
   STB:
   STREFR:
@@ -230,28 +233,28 @@ opcodes:
   BREMBITS:
   BREMREFS:
   BREMBITREFS:
-  BCHKBITS: ["int"]
+  BCHKBITS: ['int']
   BCHKBITSX:
   BCHKREFS:
   BCHKBITREFS:
-  BCHKBITSQ: ["int"]
+  BCHKBITSQ: ['int']
   BCHKBITSQX:
   BCHKBITREFSQ:
   STZEROES:
   STONES:
   STSAME:
-  STSLICECONST: ["cell", "int", "int", "int", "int"] # source ref, offset bits, offset refs, bits, refs
+  STSLICECONST: ['cell', 'int', 'int', 'int', 'int'] # source ref, offset bits, offset refs, bits, refs
   STREF3CONST:
   BCHKREFSQ:
 
   # A.7.2. Cell deserialization primitives.
   CTOS:
   ENDS:
-  LDI: ["int"]
-  LDU: ["int"]
+  LDI: ['int']
+  LDU: ['int']
   LDREF:
   LDREFRTOS:
-  LDSLICE: ["int"]
+  LDSLICE: ['int']
   LDIX:
   LDUX:
   PLDIX:
@@ -260,20 +263,20 @@ opcodes:
   LDUXQ:
   PLDIXQ:
   PLDUXQ:
-  PLDI: ["int"]
-  PLDU: ["int"]
-  LDIQ: ["int"]
-  LDUQ: ["int"]
-  PLDIQ: ["int"]
-  PLDUQ: ["int"]
-  PLDUZ: ["int"]
+  PLDI: ['int']
+  PLDU: ['int']
+  LDIQ: ['int']
+  LDUQ: ['int']
+  PLDIQ: ['int']
+  PLDUQ: ['int']
+  PLDUZ: ['int']
   LDSLICEX:
   PLDSLICEX:
   LDSLICEXQ:
   PLDSLICEXQ:
-  PLDSLICE: ["int"]
-  LDSLICEQ: ["int"]
-  PLDSLICEQ: ["int"]
+  PLDSLICE: ['int']
+  LDSLICEQ: ['int']
+  PLDSLICEQ: ['int']
   SDCUTFIRST:
   SDSKIPFIRST:
   SDCUTLAST:
@@ -303,7 +306,7 @@ opcodes:
   SBITS:
   SREFS:
   SBITREFS:
-  PLDREFIDX: ["int"]
+  PLDREFIDX: ['int']
   PLDREF:
   LDILE4:
   LDULE4:
@@ -330,22 +333,22 @@ opcodes:
   # A.8.1. Unconditional control flow primitives.
   EXECUTE:
   JMPX:
-  CALLXARGS: ["int", "int"]
-  JMPXARGS: ["int"]
-  RETARGS: ["int"]
+  CALLXARGS: ['int', 'int']
+  JMPXARGS: ['int']
+  RETARGS: ['int']
   RET:
   RETFALSE:
   RETBOOL:
   CALLCC:
   JMPXDATA:
-  CALLCCARGS: ["int", "int"]
+  CALLCCARGS: ['int', 'int']
   CALLXVARARGS:
   RETVARARGS:
   JMPXVARARGS:
   CALLCCVARARGS:
-  CALLREF: ["cell"]
-  JMPREF: ["cell"]
-  JMPREFDATA: ["cell"]
+  CALLREF: ['cell']
+  JMPREF: ['cell']
+  JMPREFDATA: ['cell']
   RETDATA:
 
   # A.8.2. Conditional control flow primitives.
@@ -356,21 +359,21 @@ opcodes:
   IFJMP:
   IFNOTJMP:
   IFELSE:
-  IFREF: ["cell"]
-  IFNOTREF: ["cell"]
-  IFJMPREF: ["cell"]
-  IFNOTJMPREF: ["cell"]
+  IFREF: ['cell']
+  IFNOTREF: ['cell']
+  IFJMPREF: ['cell']
+  IFNOTJMPREF: ['cell']
   CONDSEL:
   CONDSELCHK:
   IFRETALT:
   IFNOTRETALT:
-  IFREFELSE: ["cell"]
-  IFELSEREF: ["cell"]
-  IFREFELSEREF: ["cell"]
-  IFBITJMP: ["int"]
-  IFNBITJMP: ["int"]
-  IFBITJMPREF: ["int"]
-  IFNBITJMPREF: ["int"]
+  IFREFELSE: ['cell']
+  IFELSEREF: ['cell']
+  IFREFELSEREF: ['cell']
+  IFBITJMP: ['int']
+  IFNBITJMP: ['int']
+  IFBITJMPREF: ['int']
+  IFNBITJMPREF: ['int']
 
   # A.8.3. Control flow primitives: loops.
   REPEAT:
@@ -391,27 +394,27 @@ opcodes:
   AGAINENDBRK:
 
   # A.8.4. Manipulating the stack of continuations.
-  SETCONTARGS: ["int", "int"]
+  SETCONTARGS: ['int', 'int']
   SETCONTVARARGS:
-  RETURNARGS: ["int"]
+  RETURNARGS: ['int']
   RETURNVARARGS:
   SETNUMVARARGS:
 
   # A.8.5. Creating simple continuations and closures.
   BLESS:
   BLESSVARARGS:
-  BLESSARGS: ["int", "int"]
+  BLESSARGS: ['int', 'int']
 
   # A.8.6. Operations with continuation savelists and control registers.
-  PUSHCTR: ["int"]
-  POPCTR: ["int"]
-  SETCONTCTR: ["int"]
-  SETRETCTR: ["int"]
-  SETALTCTR: ["int"]
-  POPSAVE: ["int"]
-  SAVE: ["int"]
-  SAVEALT: ["int"]
-  SAVEBOTH: ["int"]
+  PUSHCTR: ['int']
+  POPCTR: ['int']
+  SETCONTCTR: ['int']
+  SETRETCTR: ['int']
+  SETALTCTR: ['int']
+  POPSAVE: ['int']
+  SAVE: ['int']
+  SAVEALT: ['int']
+  SAVEBOTH: ['int']
   PUSHCTRX:
   POPCTRX:
   SETCONTCTRX:
@@ -429,17 +432,17 @@ opcodes:
   SAMEALTSAVE:
 
   # A.8.7. Dictionary subroutine calls and jumps.
-  CALL: ["int"]
-  JMP: ["int"]
-  PREPARE: ["int"]
+  CALL: ['int']
+  JMP: ['int']
+  PREPARE: ['int']
 
   # A.9.1. Throwing exceptions.
-  THROW: ["int"]
-  THROWIF: ["int"]
-  THROWIFNOT: ["int"]
-  THROWARG: ["int"]
-  THROWARGIF: ["int"]
-  THROWARGIFNOT: ["int"]
+  THROW: ['int']
+  THROWIF: ['int']
+  THROWIFNOT: ['int']
+  THROWARG: ['int']
+  THROWARGIF: ['int']
+  THROWARGIFNOT: ['int']
   THROWANY:
   THROWARGANY:
   THROWANYIF:
@@ -449,7 +452,7 @@ opcodes:
 
   # A.9.2. Catching and handling exceptions.
   TRY:
-  TRYARGS: ["int", "int"]
+  TRYARGS: ['int', 'int']
 
   # A.10.1. Dictionary creation.
   # NEWDICT: === PUSHNULL
@@ -600,12 +603,12 @@ opcodes:
   DICTUGETJMP:
   DICTIGETEXEC:
   DICTUGETEXEC:
-  DICTPUSHCONST: ["int", "cell"]
+  DICTPUSHCONST: ['int', 'cell']
   PFXDICTGETQ:
   PFXDICTGET:
   PFXDICTGETJMP:
   PFXDICTGETEXEC:
-  PFXDICTCONSTGETJMP: ["int"]
+  PFXDICTCONSTGETJMP: ['int']
   DICTIGETJMPZ:
   DICTUGETJMPZ:
   DICTIGETEXECZ:
@@ -634,7 +637,7 @@ opcodes:
   ADDRAND:
 
   # A.11.4. Configuration primitives.
-  GETPARAM: ["int"]
+  GETPARAM: ['int']
   NOW:
   BLOCKLT:
   LTIME:
@@ -648,9 +651,9 @@ opcodes:
 
   # A.11.5. Global variable primitives.
   GETGLOBVAR:
-  GETGLOB: ["int"]
+  GETGLOB: ['int']
   SETGLOBVAR:
-  SETGLOB: ["int"]
+  SETGLOB: ['int']
 
   # A.11.6. Hashing and cryptography primitives.
   HASHCU:
@@ -694,15 +697,15 @@ opcodes:
   CHANGELIB:
 
   # A.12.2. Debug primitives as operations without side-effect.
-  DEBUG: ["int"]
-  DEBUGSTR: ["string"]
-  # DUMPSTK:
+  DEBUG: ['int']
+  DEBUGSTR: ['string']
+  DUMPSTK:
   # DUMPSTKTOP: ["int"]
   # HEXDUMP:
   # HEXPRINT:
   # BINDUMP:
   # BINPRINT:
-  # STRDUMP:
+  STRDUMP:
   # STRPRINT:
   # DEBUGOFF:
   # DEBUGON:
@@ -714,5 +717,6 @@ opcodes:
   # PRINTSTR: ["string"]
 
   # A.13 Codepage primitives
-  SETCP: ["int"]
+  SETCP: ['int']
+  SETCP0:
   SETCPX:

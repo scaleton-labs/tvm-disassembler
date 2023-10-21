@@ -7,10 +7,7 @@ exports[`decompiler should decompile a simple contract 1`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -34,10 +31,7 @@ exports[`decompiler should decompile a simple contract 1`] = `
     "length": 8,
     "offset": 32,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -555,10 +549,7 @@ exports[`decompiler should decompile a simple contract 1`] = `
     "length": 8,
     "offset": 456,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -620,10 +611,7 @@ exports[`decompiler should decompile a simple contract 2`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -960,10 +948,7 @@ exports[`decompiler should decompile a simple contract 2`] = `
     "length": 8,
     "offset": 152,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -1496,10 +1481,7 @@ exports[`decompiler should decompile a simple contract 2`] = `
     "length": 8,
     "offset": 576,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -1561,10 +1543,7 @@ exports[`decompiler should decompile a simple contract 3`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -1948,10 +1927,7 @@ exports[`decompiler should decompile a simple contract 3`] = `
     "length": 8,
     "offset": 248,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -2496,10 +2472,7 @@ exports[`decompiler should decompile a simple contract 3`] = `
     "length": 8,
     "offset": 672,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -2561,10 +2534,7 @@ exports[`decompiler should decompile a simple contract 4`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -2905,10 +2875,7 @@ exports[`decompiler should decompile a simple contract 4`] = `
     "length": 8,
     "offset": 152,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -2984,10 +2951,7 @@ exports[`decompiler should decompile a simple contract 4`] = `
     "length": 16,
     "offset": 256,
     "op": {
-      "args": [
-        3,
-      ],
-      "code": "GETPARAM",
+      "code": "NOW",
     },
   },
   {
@@ -3746,10 +3710,7 @@ exports[`decompiler should decompile a simple contract 4`] = `
     "length": 8,
     "offset": 608,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -3811,10 +3772,7 @@ exports[`decompiler should decompile a simple contract 5`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -4202,10 +4160,7 @@ exports[`decompiler should decompile a simple contract 5`] = `
     "length": 8,
     "offset": 248,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -4281,10 +4236,7 @@ exports[`decompiler should decompile a simple contract 5`] = `
     "length": 16,
     "offset": 352,
     "op": {
-      "args": [
-        3,
-      ],
-      "code": "GETPARAM",
+      "code": "NOW",
     },
   },
   {
@@ -5067,10 +5019,7 @@ exports[`decompiler should decompile a simple contract 5`] = `
     "length": 8,
     "offset": 704,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -5132,10 +5081,7 @@ exports[`decompiler should decompile a simple contract 6`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -5487,10 +5433,7 @@ exports[`decompiler should decompile a simple contract 6`] = `
     "length": 8,
     "offset": 152,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -5569,10 +5512,7 @@ exports[`decompiler should decompile a simple contract 6`] = `
     "length": 16,
     "offset": 264,
     "op": {
-      "args": [
-        3,
-      ],
-      "code": "GETPARAM",
+      "code": "NOW",
     },
   },
   {
@@ -6403,10 +6343,7 @@ exports[`decompiler should decompile a simple contract 6`] = `
     "length": 8,
     "offset": 680,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -6479,10 +6416,7 @@ exports[`decompiler should decompile a simple contract 7`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
@@ -6884,10 +6818,7 @@ exports[`decompiler should decompile a simple contract 7`] = `
     "length": 8,
     "offset": 272,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -6966,10 +6897,7 @@ exports[`decompiler should decompile a simple contract 7`] = `
     "length": 16,
     "offset": 384,
     "op": {
-      "args": [
-        3,
-      ],
-      "code": "GETPARAM",
+      "code": "NOW",
     },
   },
   {
@@ -7830,10 +7758,7 @@ exports[`decompiler should decompile a simple contract 7`] = `
     "length": 8,
     "offset": 800,
     "op": {
-      "args": [
-        1,
-      ],
-      "code": "ADDCONST",
+      "code": "INC",
     },
   },
   {
@@ -7906,10 +7831,7 @@ exports[`decompiler should decompile a simple contract 8`] = `
     "length": 16,
     "offset": 0,
     "op": {
-      "args": [
-        0,
-      ],
-      "code": "SETCP",
+      "code": "SETCP0",
     },
   },
   {
