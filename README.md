@@ -20,6 +20,11 @@ const ast = decompileAll(code); // Build AST
 const assembler = AssemblerWriter.write(ast); // Generate assembler from AST 
 ```
 
+## Authors
+
+* [Steve Korshakov](https://github.com/ex3ndr)
+* [Nick Nekilov](https://github.com/NickNekilov)
+
 ## License
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
