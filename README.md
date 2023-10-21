@@ -13,15 +13,11 @@ yarn add @scaleton/tvm-disassembler
 
 ```typescript
 import { Cell } from '@ton/core';
-import { decompileCell, decompileAll } from '@scaleton/tvm-disassembler';
+import { decompileAll, AssemblerWriter } from '@scaleton/tvm-disassembler';
 
-// Decompile a single cell sequence into opcode list.
-// Useful for interpretators or for debugging.
-const compiledCode = Cell.fromBase64('...');
-const decompiledOpcodes = decompileCell({ src: compiledCode });
-
-// Decompile a whole contract. Useful for contract developers and explorers.
-const decompiledCode = decompileAll({ src: compiledCode });
+const code = Cell.fromBase64('...');
+const ast = decompileAll(code); // Build AST
+const assembler = AssemblerWriter.write(ast); // Generate assembler from AST 
 ```
 
 ## License
