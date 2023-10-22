@@ -10,6 +10,7 @@ import {
   ControlRegisterNode,
   StackEntryNode,
   GlobalVariableNode,
+  MethodReferenceNode,
 } from './nodes';
 
 export class AST {
@@ -103,6 +104,13 @@ export class AST {
     return {
       type: NodeType.GLOBAL_VARIABLE,
       value: index,
+    };
+  }
+
+  static methodReference(method: number): MethodReferenceNode {
+    return {
+      type: NodeType.METHOD_REFERENCE,
+      methodId: method,
     };
   }
 }

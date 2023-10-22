@@ -1,5 +1,6 @@
-import { beginCell, Cell, Slice } from '@ton/core';
+import { Slice } from '@ton/core';
 import { Codepage } from './Codepage';
+import { OpCode, OpCodeNoArgs, OpCodeWithArgs } from './opcodes.gen';
 
 const CP0Auto = new Codepage();
 
@@ -30,7 +31,16 @@ CP0Auto.insertHex('2', 4, (slice) => {
 });
 CP0Auto.insertHex('3', 4, (slice) => {
   let n = slice.loadUint(4);
-  return n === 1 ? { code: 'NIP' } : { code: 'POP', args: [n] };
+
+  if (n === 0) {
+    return { code: 'DROP' };
+  }
+
+  if (n === 1) {
+    return { code: 'NIP' };
+  }
+
+  return { code: 'POP', args: [n] };
 });
 CP0Auto.insertHex('4', 4, (slice) => {
   let i = slice.loadUint(4);
@@ -351,26 +361,86 @@ CP0Auto.insertHex('a7', 8, (slice) => {
   return { code: 'MULCONST', args: [x] };
 });
 CP0Auto.insertHex('a8', 8, { code: 'MUL' });
-CP0Auto.insertHex('A9', 8, (slice) => {
-  let m = slice.loadBit();
-  let s = slice.loadUint(2);
-  let c = slice.loadBit();
-  let d = slice.loadUint(2);
-  let f = slice.loadUint(2);
-  return { code: 'DIV', args: [m, s, c, d, f] };
+
+enum DivisionResult {
+  ADDDIVMOD,
+  DIV = 1,
+  MOD = 2,
+  DIVMOD = 3,
+}
+
+enum RoundingMode {
+  FLOOR,
+  ROUND,
+  CEIL,
+}
+
+enum OperationReplacement {
+  NO,
+  DIV_BY_RIGHT_SHIFT,
+  MUL_BY_LEFT_SHIFT,
+}
+
+CP0Auto.insertHex('a9', 8, (source: Slice): OpCode => {
+  const enablePreMultiplication = source.loadBit();
+  const replacement: OperationReplacement = source.loadUint(2);
+  const inlineTT: boolean = source.loadBit();
+  const divisionResult: DivisionResult = source.loadUint(2);
+  const roundingMode: RoundingMode = source.loadUint(2);
+  const tt = inlineTT ? source.loadUint(8) + 1 : -1;
+
+  let code = '';
+
+  if (enablePreMultiplication) {
+    code +=
+      replacement === OperationReplacement.MUL_BY_LEFT_SHIFT ? 'LSHIFT' : 'MUL';
+  }
+
+  const enableDivisionReplacement =
+    replacement === OperationReplacement.DIV_BY_RIGHT_SHIFT;
+
+  switch (divisionResult) {
+    case DivisionResult.DIV:
+      code += enableDivisionReplacement ? 'RSHIFT' : 'DIV';
+      break;
+    case DivisionResult.MOD:
+      code += enableDivisionReplacement ? 'MODPOW2' : 'MOD';
+      break;
+    case DivisionResult.DIVMOD:
+      code += enableDivisionReplacement ? 'RSHIFTMOD' : 'DIVMOD';
+      break;
+    case DivisionResult.ADDDIVMOD:
+      code += enableDivisionReplacement ? 'ADDRSHIFTMOD' : 'ADDDIVMOD';
+      break;
+  }
+
+  switch (roundingMode) {
+    case RoundingMode.ROUND:
+      code += 'R';
+      break;
+
+    case RoundingMode.CEIL:
+      code += 'C';
+      break;
+  }
+
+  return inlineTT
+    ? ({ code: code + '#', args: [tt] } as OpCodeWithArgs)
+    : ({ code } as OpCodeNoArgs);
 });
+
 // 11079680 (DUMMY)
 // 11132928 (DUMMY)
 CP0Auto.insertHex('aa', 8, (slice) => {
   let cc = slice.loadUint(8);
-  return { code: 'LSHIFT', args: [cc + 1] };
+  return { code: 'LSHIFT#', args: [cc + 1] };
 });
 CP0Auto.insertHex('ab', 8, (slice) => {
   let cc = slice.loadUint(8);
-  return { code: 'RSHIFT', args: [cc + 1] };
+  return { code: 'RSHIFT#', args: [cc + 1] };
 });
-CP0Auto.insertHex('ac', 8, { code: 'LSHIFTX' });
-CP0Auto.insertHex('ad', 8, { code: 'RSHIFTX' });
+CP0Auto.insertHex('ac', 8, { code: 'LSHIFT' });
+CP0Auto.insertHex('ad', 8, { code: 'RSHIFT' });
 CP0Auto.insertHex('ae', 8, { code: 'POW2' });
 // 11468800 (DUMMY)
 CP0Auto.insertHex('b0', 8, { code: 'AND' });
@@ -897,11 +967,11 @@ CP0Auto.insertHex('ee', 8, (slice) => {
 // 15663104 (DUMMY)
 CP0Auto.insertHex('f0', 8, (slice) => {
   let n = slice.loadUint(8);
-  return { code: 'CALL', args: [n] };
+  return { code: 'CALLDICT', args: [n] };
 });
 CP0Auto.insertHex('f10', 10, (slice) => {
   let n = slice.loadUint(14);
-  return { code: 'CALL', args: [n] };
+  return { code: 'CALLDICT', args: [n] };
 });
 // CP0Auto.insertHex('f14', 10, (slice) => {
 //     let args = slice.loadUint(14);

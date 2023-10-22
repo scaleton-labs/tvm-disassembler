@@ -11,6 +11,7 @@ opcodes:
   DUP:
   OVER:
   NIP:
+  DROP:
 
   # A.2.2. Compound stack manipulation primitives.
   XCPU: ['int', 'int']
@@ -117,13 +118,30 @@ opcodes:
   MUL:
 
   # A.5.2. Division.
-  DIV: ['bool', 'int', 'bool', 'int', 'int']
+  DIV:
+  DIVR:
+  DIVC:
+  MOD:
+  DIVMOD:
+  DIVMODR:
+  DIVMODC:
+  MODPOW2:
+  MODPOW2R:
+  MODPOW2C:
+  RSHIFTMOD:
+  RSHIFTMODR:
+  RSHIFTMODC:
+  ADDRSHIFTMOD:
+  ADDRSHIFTMODR:
+  ADDRSHIFTMODC:
 
   # A.5.3. Shifts, logical operations.
-  LSHIFT: ['int']
-  RSHIFT: ['int']
-  LSHIFTX: []
-  RSHIFTX: []
+  LSHIFT#: ['int']
+  RSHIFT#: ['int']
+  LSHIFT:
+  RSHIFT:
+  RSHIFTR:
+  RSHIFTC:
   POW2:
   AND:
   OR:
@@ -432,7 +450,7 @@ opcodes:
   SAMEALTSAVE:
 
   # A.8.7. Dictionary subroutine calls and jumps.
-  CALL: ['int']
+  CALLDICT: ['int']
   JMP: ['int']
   PREPARE: ['int']
 

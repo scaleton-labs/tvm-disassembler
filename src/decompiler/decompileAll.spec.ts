@@ -239,4 +239,14 @@ describe('decompileAll', () => {
 
     expect(ast).toMatchSnapshot();
   });
+
+  it('should decompile division operations', () => {
+    const code = Cell.fromBase64(
+      'te6ccgEBBAEAZAABFP8A9KQT9LzyyAsBAgFiAgMABtDyCgCVoNzQ61II61II61IK61IM61IRBhNSGGEGE1IaYQYTUhxg61JK61JM7utTCO7rUwru61MM51NoAOdTagDnU2wA6kFTiOpBU4rqQVON',
+    );
+    const ast = decompileAll(code);
+    const result = AssemblerWriter.write(ast);
+
+    expect(result).toMatchSnapshot();
+  });
 });

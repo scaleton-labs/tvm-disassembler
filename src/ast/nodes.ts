@@ -12,6 +12,7 @@ export enum NodeType {
   CONTROL_REGISTER,
   STACK_ENTRY,
   GLOBAL_VARIABLE,
+  METHOD_REFERENCE,
 }
 
 export type ControlRegisterNode = {
@@ -39,6 +40,11 @@ export type ReferenceNode = {
   hash: string;
 };
 
+export type MethodReferenceNode = {
+  type: NodeType.METHOD_REFERENCE;
+  methodId: number;
+};
+
 export type InstructionNode = {
   type: NodeType.INSTRUCTION;
   opcode: OpCode['code'];
@@ -49,6 +55,7 @@ export type InstructionNode = {
     | StackEntryNode
     | ControlRegisterNode
     | GlobalVariableNode
+    | MethodReferenceNode
   )[];
   offset: number;
   length: number;

@@ -17,13 +17,13 @@ import { decompileAll, AssemblerWriter } from '@scaleton/tvm-disassembler';
 
 const code = Cell.fromBase64('...');
 const ast = decompileAll(code); // Build AST
-const assembler = AssemblerWriter.write(ast); // Generate assembler from AST 
+const assembler = AssemblerWriter.write(ast); // Generate assembler from AST
 ```
 
 ## Authors
 
-* [Steve Korshakov](https://github.com/ex3ndr)
-* [Nick Nekilov](https://github.com/NickNekilov)
+- [Steve Korshakov](https://github.com/ex3ndr)
+- [Nick Nekilov](https://github.com/NickNekilov)
 
 ## License
 

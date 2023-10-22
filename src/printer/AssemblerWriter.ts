@@ -83,7 +83,9 @@ export class AssemblerWriter {
   }
 
   writeBlockNode(node: BlockNode) {
-    node.instructions.forEach((instruction) => this.writeNode(instruction));
+    node.instructions.forEach((instruction) =>
+      this.writeInstructionNode(instruction),
+    );
   }
 
   writeInstructionNode(node: InstructionNode) {
@@ -107,6 +109,10 @@ export class AssemblerWriter {
 
         case NodeType.GLOBAL_VARIABLE:
           this.#writer.write(`${this.resolveGlobalName(arg.value)} `);
+          break;
+
+        case NodeType.METHOD_REFERENCE:
+          this.#writer.write(`${this.resolveMethodName(arg.methodId)} `);
           break;
 
         case NodeType.BLOCK:

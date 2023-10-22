@@ -110,6 +110,15 @@ function decompileCell(args: {
           op.hash,
         );
 
+      case 'CALLDICT':
+        return AST.instruction(
+          opcode.code,
+          [AST.methodReference(opcode.args[0])],
+          op.offset,
+          op.length,
+          op.hash,
+        );
+
       case 'PUSHCONT':
         return AST.instruction(
           opcode.code,

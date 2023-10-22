@@ -42,9 +42,8 @@ export type OpCodeWithArgs =
   | { code: 'PUSHCONT'; args: [Cell, number, number, number, number] }
   | { code: 'ADDCONST'; args: [number] }
   | { code: 'MULCONST'; args: [number] }
-  | { code: 'DIV'; args: [boolean, number, boolean, number, number] }
-  | { code: 'LSHIFT'; args: [number] }
-  | { code: 'RSHIFT'; args: [number] }
+  | { code: 'LSHIFT#'; args: [number] }
+  | { code: 'RSHIFT#'; args: [number] }
   | { code: 'FITS'; args: [number] }
   | { code: 'UFITS'; args: [number] }
   | { code: 'EQINT'; args: [number] }
@@ -106,7 +105,7 @@ export type OpCodeWithArgs =
   | { code: 'SAVE'; args: [number] }
   | { code: 'SAVEALT'; args: [number] }
   | { code: 'SAVEBOTH'; args: [number] }
-  | { code: 'CALL'; args: [number] }
+  | { code: 'CALLDICT'; args: [number] }
   | { code: 'JMP'; args: [number] }
   | { code: 'PREPARE'; args: [number] }
   | { code: 'THROW'; args: [number] }
@@ -134,6 +133,7 @@ export type OpCodeNoArgs =
   | { code: 'DUP' }
   | { code: 'OVER' }
   | { code: 'NIP' }
+  | { code: 'DROP' }
   | { code: 'ROT' }
   | { code: 'ROTREV' }
   | { code: 'SWAP2' }
@@ -190,8 +190,26 @@ export type OpCodeNoArgs =
   | { code: 'INC' }
   | { code: 'DEC' }
   | { code: 'MUL' }
-  | { code: 'LSHIFTX' }
-  | { code: 'RSHIFTX' }
+  | { code: 'DIV' }
+  | { code: 'DIVR' }
+  | { code: 'DIVC' }
+  | { code: 'MOD' }
+  | { code: 'DIVMOD' }
+  | { code: 'DIVMODR' }
+  | { code: 'DIVMODC' }
+  | { code: 'MODPOW2' }
+  | { code: 'MODPOW2R' }
+  | { code: 'MODPOW2C' }
+  | { code: 'RSHIFTMOD' }
+  | { code: 'RSHIFTMODR' }
+  | { code: 'RSHIFTMODC' }
+  | { code: 'ADDRSHIFTMOD' }
+  | { code: 'ADDRSHIFTMODR' }
+  | { code: 'ADDRSHIFTMODC' }
+  | { code: 'LSHIFT' }
+  | { code: 'RSHIFT' }
+  | { code: 'RSHIFTR' }
+  | { code: 'RSHIFTC' }
   | { code: 'POW2' }
   | { code: 'AND' }
   | { code: 'OR' }

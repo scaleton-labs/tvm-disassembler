@@ -1,5 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`decompileAll should decompile division operations 1`] = `
+"PROGRAM{
+  DECLPROC ?fun_0;
+  DECLPROC ?fun_93800;
+  ?fun_0 PROC:<{
+    10 THROW
+  }>
+  ?fun_93800 PROC:<{
+    5 PUSHINT
+    DIV
+    5 PUSHINT
+    DIV
+    5 PUSHINT
+    DIVR
+    5 PUSHINT
+    DIVC
+    5 PUSHINT
+    MOD
+    10 PUSHPOW2
+    DIVMOD
+    DROP
+    10 PUSHPOW2
+    DIVMODR
+    DROP
+    10 PUSHPOW2
+    DIVMODC
+    DROP
+    5 PUSHINT
+    RSHIFTR
+    5 PUSHINT
+    RSHIFTC
+    7 PUSHINT
+    5 PUSHINT
+    MULDIV
+    7 PUSHINT
+    5 PUSHINT
+    MULDIVR
+    7 PUSHINT
+    5 PUSHINT
+    MULDIVC
+    3 PUSHINT
+    1 MULRSHIFT#
+    3 PUSHINT
+    1 MULRSHIFTR#
+    3 PUSHINT
+    1 MULRSHIFTC#
+    5 PUSHINT
+    DUP
+    LSHIFTDIV
+    5 PUSHINT
+    DUP
+    LSHIFTDIVR
+    5 PUSHINT
+    DUP
+    LSHIFTDIVC
+  }>
+}END>c"
+`;
+
 exports[`decompileAll should decompile echo 1`] = `
 "PROGRAM{
   DECLPROC recv_internal;
@@ -63,7 +122,7 @@ exports[`decompileAll should decompile echo 1`] = `
     1 LDI
     SWAP
     <{
-      s0 POP
+      DROP
       NULL
     }> PUSHCONT
     <{
@@ -82,8 +141,8 @@ exports[`decompileAll should decompile echo 1`] = `
     IFELSE
     ROTREV
     $Echo$_contract_router INLINECALLDICT
-    s0 POP
-    s0 POP
+    DROP
+    DROP
     NEWC
     __tact_context_sys GETGLOB
     SWAP
@@ -109,7 +168,7 @@ exports[`decompileAll should decompile echo 1`] = `
     1 LDI
     SWAP
     <{
-      s0 POP
+      DROP
       NULL
     }> PUSHCONT
     <{
@@ -344,17 +403,17 @@ exports[`decompileAll should decompile echo 1`] = `
       127 PUSHINT
       s2 PUSH
       BBITS
-      3 RSHIFT
+      3 RSHIFT#
       SUB
       s0 s5 XCHG
-      3 RSHIFT
+      3 RSHIFT#
       s5 s5 XCPU
       MIN
       DUP
       0 GTINT
       <{
         DUP
-        3 LSHIFT
+        3 LSHIFT#
         s1 s5 XCHG
         LDSLICEX
         s3 s3 XCHG2
@@ -373,7 +432,7 @@ exports[`decompileAll should decompile echo 1`] = `
         2 TUPLE
         s4 s4 XCHG2
         SUB
-        3 LSHIFT
+        3 LSHIFT#
       }> PUSHCONT
       <{
         NIP
@@ -381,7 +440,7 @@ exports[`decompileAll should decompile echo 1`] = `
         0 GTINT
         <{
           LDREF
-          s0 POP
+          DROP
           CTOS
           DUP
           SREFS
@@ -400,7 +459,7 @@ exports[`decompileAll should decompile echo 1`] = `
     3 BLKDROP
   }>
   $Echo$_contract_init PROCREF:<{
-    s0 POP
+    DROP
     NULL
   }>
   $Echo$_contract_router PROCREF:<{
@@ -411,7 +470,7 @@ exports[`decompileAll should decompile echo 1`] = `
     SBITS
     31 GTINT
     <{
-      s0 POP
+      DROP
       DUP
       32 PLDU
     }> PUSHCONT
@@ -524,7 +583,7 @@ exports[`decompileAll should decompile highload wallet 1`] = `
         s0 s2 XCHG
         8 LDU
         LDREF
-        s0 POP
+        DROP
         SWAP
         SENDRAWMSG
       }> PUSHCONT
@@ -547,7 +606,7 @@ exports[`decompileAll should decompile highload wallet 1`] = `
     c4 POP
   }>
   recv_internal PROC:<{
-    s0 POP
+    DROP
   }>
   get_public_key PROC:<{
     c4 PUSH
@@ -1367,16 +1426,11 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
           {
-            "arguments": [
-              {
-                "type": 8,
-                "value": 0,
-              },
-            ],
+            "arguments": [],
             "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
             "length": 8,
             "offset": 944,
-            "opcode": "POP",
+            "opcode": "DROP",
             "type": 3,
           },
           {
@@ -4345,16 +4399,11 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
               {
                 "instructions": [
                   {
-                    "arguments": [
-                      {
-                        "type": 8,
-                        "value": 0,
-                      },
-                    ],
+                    "arguments": [],
                     "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                     "length": 8,
                     "offset": 88,
-                    "opcode": "POP",
+                    "opcode": "DROP",
                     "type": 3,
                   },
                   {
@@ -4426,16 +4475,11 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                   {
-                    "arguments": [
-                      {
-                        "type": 8,
-                        "value": 0,
-                      },
-                    ],
+                    "arguments": [],
                     "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                     "length": 8,
                     "offset": 160,
-                    "opcode": "POP",
+                    "opcode": "DROP",
                     "type": 3,
                   },
                   {
@@ -6268,16 +6312,11 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                       {
                         "instructions": [
                           {
-                            "arguments": [
-                              {
-                                "type": 8,
-                                "value": 0,
-                              },
-                            ],
+                            "arguments": [],
                             "hash": "e9b224e4ab33c85009948417501a4f6de100f5b08b7f31e642402e582b1bead1",
                             "length": 8,
                             "offset": 360,
-                            "opcode": "POP",
+                            "opcode": "DROP",
                             "type": 3,
                           },
                           {
@@ -6330,16 +6369,11 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
           {
-            "arguments": [
-              {
-                "type": 8,
-                "value": 0,
-              },
-            ],
+            "arguments": [],
             "hash": "750316354d1358c7b667ca70cb326d7d3b337671c8f29680807b314e7eca6502",
             "length": 8,
             "offset": 0,
-            "opcode": "POP",
+            "opcode": "DROP",
             "type": 3,
           },
           {
@@ -6552,7 +6586,7 @@ exports[`decompileAll should decompile wallet 1`] = `
     IFELSE
     2 3 BLKSWAP
     ?fun_ref_e3ac26e214db4b5d INLINECALLDICT
-    s0 POP
+    DROP
     NEWC
     3 GETGLOB
     SWAP
@@ -6848,7 +6882,7 @@ exports[`decompileAll should decompile wallet 1`] = `
     SBITS
     31 GTINT
     <{
-      s0 POP
+      DROP
       DUP
       32 PLDU
     }> PUSHCONT
@@ -6856,7 +6890,7 @@ exports[`decompileAll should decompile wallet 1`] = `
     s0 s2 XCHG
     <{
       NIP
-      s0 POP
+      DROP
       -1 PUSHINT
     }> PUSHCONT
     IFJMP
@@ -7033,13 +7067,13 @@ exports[`decompileAll should decompile wallet 1`] = `
       70845166824474961660404539579183775280814018357735859006660992311266151320569 PUSHINT
       EQUAL
       <{
-        s0 POP
+        DROP
         -1 PUSHINT
         RETFALSE
       }> PUSHCONT
       IFJMP
     }> IFREF
-    s0 POP
+    DROP
     s0 s2 XCHG
     INC
     s0 s2 XCHG
@@ -7101,7 +7135,7 @@ DUP
 85143 PUSHINT
 EQUAL
 <{
-  s0 POP
+  DROP
   c4 PUSH
   CTOS
   32 PLDU
@@ -7297,7 +7331,7 @@ exports[`decompileAll should decompile wallet v4 1`] = `
         SENDRAWMSG
       }> PUSHCONT
       WHILE
-      s0 POP
+      DROP
     }> PUSHCONT
     IFJMP
     OVER
@@ -7377,14 +7411,14 @@ exports[`decompileAll should decompile wallet v4 1`] = `
     SWAP
     3 EQINT
     <{
-      s0 POP
+      DROP
     }> PUSHCONT
     <{
       264 PUSHINT
       LDSLICEX
       LDGRAMS
       64 LDU
-      s0 POP
+      DROP
       s2 s5 PUXC
       264 PUSHINT
       DICTDEL
@@ -7453,7 +7487,7 @@ exports[`decompileAll should decompile wallet v4 1`] = `
     IFJMP
     s0 s3 XCHG
     LDMSGADDR
-    s0 POP
+    DROP
     DUP
     REWRITESTDADDR
     SWAP
@@ -7467,7 +7501,7 @@ exports[`decompileAll should decompile wallet v4 1`] = `
     320 PUSHINT
     SDSKIPFIRST
     LDDICT
-    s0 POP
+    DROP
     DUP2
     264 PUSHINT
     DICTGET
@@ -7486,16 +7520,16 @@ exports[`decompileAll should decompile wallet v4 1`] = `
     EQUAL
     <{
       s8 POP
-      s0 POP
+      DROP
     }> PUSHCONT
     <{
       SWAP
       LDGRAMS
       LDDICT
-      s0 POP
+      DROP
       BALANCE
       2 UNTUPLE
-      s0 POP
+      DROP
       s0 s10 XCHG2
       SUB
       OVER
@@ -7535,7 +7569,7 @@ exports[`decompileAll should decompile wallet v4 1`] = `
       s0 s4 XCHG2
       264 PUSHINT
       DICTDEL
-      s0 POP
+      DROP
       c4 PUSH
       CTOS
       320 PUSHINT
@@ -7581,7 +7615,7 @@ exports[`decompileAll should decompile wallet v4 1`] = `
     320 PUSHINT
     SDSKIPFIRST
     LDDICT
-    s0 POP
+    DROP
     s0 s2 XCHG
     NEWC
     8 STI
@@ -7620,7 +7654,7 @@ exports[`decompileAll should decompile wallet v4 1`] = `
     320 PUSHINT
     SDSKIPFIRST
     LDDICT
-    s0 POP
+    DROP
     <{
       264 PUSHINT
       DICTREMMIN
@@ -7630,20 +7664,20 @@ exports[`decompileAll should decompile wallet v4 1`] = `
       <{
         8 LDI
         256 LDU
-        s0 POP
+        DROP
         2 TUPLE
         s0 s3 XCHG2
         2 TUPLE
         s0 s2 XCHG
       }> PUSHCONT
       <{
-        s0 POP
+        DROP
       }> PUSHCONT
       IFELSE
       NOT
     }> PUSHCONT
     UNTIL
-    s0 POP
+    DROP
   }>
 }END>c"
 `;
