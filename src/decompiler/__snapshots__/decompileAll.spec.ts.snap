@@ -628,6 +628,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
   "methods": [
     {
       "body": {
+        "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
         "instructions": [
           {
             "arguments": [],
@@ -703,6 +704,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
                 "instructions": [
                   {
                     "arguments": [
@@ -718,6 +720,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 96,
+                "offset": 88,
                 "type": 2,
               },
             ],
@@ -730,6 +734,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
                 "instructions": [
                   {
                     "arguments": [
@@ -745,6 +750,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 112,
+                "offset": 104,
                 "type": 2,
               },
             ],
@@ -1138,6 +1145,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
                 "instructions": [
                   {
                     "arguments": [
@@ -1213,6 +1221,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 672,
+                "offset": 592,
                 "type": 2,
               },
             ],
@@ -1225,6 +1235,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
                 "instructions": [
                   {
                     "arguments": [],
@@ -1378,6 +1389,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 904,
+                "offset": 688,
                 "type": 2,
               },
             ],
@@ -1599,15 +1612,18 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 176,
+        "offset": 8,
         "type": 2,
       },
+      "hash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
       "id": 0,
-      "sourceHash": "88d7ac0bc592e4e44c29b773767e7d218be52ccf2c80dfb360d4c4e739609621",
-      "sourceOffset": 8,
+      "offset": 8,
       "type": 1,
     },
     {
       "body": {
+        "hash": "c49de35b92d14045d5aeb8151a4f59c55133022bc3a1e43ec10a997c99ceb5a8",
         "instructions": [
           {
             "arguments": [
@@ -1683,6 +1699,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "c49de35b92d14045d5aeb8151a4f59c55133022bc3a1e43ec10a997c99ceb5a8",
                 "instructions": [
                   {
                     "arguments": [
@@ -1758,6 +1775,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 186,
+                "offset": 106,
                 "type": 2,
               },
             ],
@@ -1770,6 +1789,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "c49de35b92d14045d5aeb8151a4f59c55133022bc3a1e43ec10a997c99ceb5a8",
                 "instructions": [
                   {
                     "arguments": [],
@@ -1923,6 +1943,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 418,
+                "offset": 202,
                 "type": 2,
               },
             ],
@@ -1971,15 +1993,18 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 458,
+        "offset": 18,
         "type": 2,
       },
+      "hash": "c49de35b92d14045d5aeb8151a4f59c55133022bc3a1e43ec10a997c99ceb5a8",
       "id": 85143,
-      "sourceHash": "c49de35b92d14045d5aeb8151a4f59c55133022bc3a1e43ec10a997c99ceb5a8",
-      "sourceOffset": 18,
+      "offset": 18,
       "type": 1,
     },
     {
       "body": {
+        "hash": "e47c227aba63df3d2c872247afe54ed5f08104b093ea0d51c52c25068cd03973",
         "instructions": [
           {
             "arguments": [
@@ -2055,6 +2080,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "e47c227aba63df3d2c872247afe54ed5f08104b093ea0d51c52c25068cd03973",
                 "instructions": [
                   {
                     "arguments": [
@@ -2130,6 +2156,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 186,
+                "offset": 106,
                 "type": 2,
               },
             ],
@@ -2142,6 +2170,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "e47c227aba63df3d2c872247afe54ed5f08104b093ea0d51c52c25068cd03973",
                 "instructions": [
                   {
                     "arguments": [],
@@ -2295,6 +2324,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 418,
+                "offset": 202,
                 "type": 2,
               },
             ],
@@ -2343,15 +2374,18 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 458,
+        "offset": 18,
         "type": 2,
       },
+      "hash": "e47c227aba63df3d2c872247afe54ed5f08104b093ea0d51c52c25068cd03973",
       "id": 86520,
-      "sourceHash": "e47c227aba63df3d2c872247afe54ed5f08104b093ea0d51c52c25068cd03973",
-      "sourceOffset": 18,
+      "offset": 18,
       "type": 1,
     },
     {
       "body": {
+        "hash": "821d5ce42cc55590f95298e559db9b5104e4c875e2d6cd2d516511f9c90d0470",
         "instructions": [
           {
             "arguments": [
@@ -2406,15 +2440,18 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 596,
+        "offset": 20,
         "type": 2,
       },
+      "hash": "821d5ce42cc55590f95298e559db9b5104e4c875e2d6cd2d516511f9c90d0470",
       "id": 113617,
-      "sourceHash": "821d5ce42cc55590f95298e559db9b5104e4c875e2d6cd2d516511f9c90d0470",
-      "sourceOffset": 20,
+      "offset": 20,
       "type": 1,
     },
     {
       "body": {
+        "hash": "290962b8dfd6854638ed2aad6e69af604c25a85b282ca6400a1ccf7f1adb7558",
         "instructions": [
           {
             "arguments": [
@@ -2490,6 +2527,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "290962b8dfd6854638ed2aad6e69af604c25a85b282ca6400a1ccf7f1adb7558",
                 "instructions": [
                   {
                     "arguments": [
@@ -2565,6 +2603,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 188,
+                "offset": 108,
                 "type": 2,
               },
             ],
@@ -2577,6 +2617,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "290962b8dfd6854638ed2aad6e69af604c25a85b282ca6400a1ccf7f1adb7558",
                 "instructions": [
                   {
                     "arguments": [],
@@ -2730,6 +2771,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 420,
+                "offset": 204,
                 "type": 2,
               },
             ],
@@ -2778,17 +2821,20 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 460,
+        "offset": 20,
         "type": 2,
       },
+      "hash": "290962b8dfd6854638ed2aad6e69af604c25a85b282ca6400a1ccf7f1adb7558",
       "id": 114762,
-      "sourceHash": "290962b8dfd6854638ed2aad6e69af604c25a85b282ca6400a1ccf7f1adb7558",
-      "sourceOffset": 20,
+      "offset": 20,
       "type": 1,
     },
   ],
   "procedures": [
     {
       "body": {
+        "hash": "cd29dd004f76b216938b2f22d140d57697524afd6adce36b2e40413bc215ffd2",
         "instructions": [
           {
             "arguments": [
@@ -2812,6 +2858,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 16,
+        "offset": 0,
         "type": 2,
       },
       "hash": "cd29dd004f76b216938b2f22d140d57697524afd6adce36b2e40413bc215ffd2",
@@ -2819,6 +2867,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
     },
     {
       "body": {
+        "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
         "instructions": [
           {
             "arguments": [],
@@ -3234,6 +3283,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
                 "instructions": [
                   {
                     "arguments": [
@@ -3249,6 +3299,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 512,
+                "offset": 504,
                 "type": 2,
               },
             ],
@@ -3261,6 +3313,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
                 "instructions": [
                   {
                     "arguments": [
@@ -3292,6 +3345,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 544,
+                "offset": 520,
                 "type": 2,
               },
             ],
@@ -3312,6 +3367,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
                 "instructions": [
                   {
                     "arguments": [
@@ -3382,6 +3438,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 616,
+                "offset": 560,
                 "type": 2,
               },
             ],
@@ -3394,6 +3452,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "55744aad5feab80c232291c689facc0b23f33639e6c6221dc6b53ab64d91bd34",
                 "instructions": [
                   {
                     "arguments": [
@@ -3537,6 +3596,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "55744aad5feab80c232291c689facc0b23f33639e6c6221dc6b53ab64d91bd34",
                         "instructions": [
                           {
                             "arguments": [
@@ -3644,6 +3704,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 240,
+                        "offset": 136,
                         "type": 2,
                       },
                     ],
@@ -3656,6 +3718,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "55744aad5feab80c232291c689facc0b23f33639e6c6221dc6b53ab64d91bd34",
                         "instructions": [
                           {
                             "arguments": [
@@ -3722,6 +3785,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 296,
+                        "offset": 248,
                         "type": 2,
                       },
                     ],
@@ -3771,6 +3836,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "55744aad5feab80c232291c689facc0b23f33639e6c6221dc6b53ab64d91bd34",
                         "instructions": [
                           {
                             "arguments": [
@@ -3878,6 +3944,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 440,
+                        "offset": 336,
                         "type": 2,
                       },
                     ],
@@ -3890,6 +3958,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "55744aad5feab80c232291c689facc0b23f33639e6c6221dc6b53ab64d91bd34",
                         "instructions": [
                           {
                             "arguments": [
@@ -3956,6 +4025,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 496,
+                        "offset": 448,
                         "type": 2,
                       },
                     ],
@@ -4100,6 +4171,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 608,
+                "offset": 0,
                 "type": 2,
               },
             ],
@@ -4136,6 +4209,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
                 "instructions": [
                   {
                     "arguments": [
@@ -4225,6 +4299,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 760,
+                "offset": 664,
                 "type": 2,
               },
             ],
@@ -4237,6 +4313,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
                 "instructions": [
                   {
                     "arguments": [],
@@ -4281,6 +4358,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 808,
+                "offset": 768,
                 "type": 2,
               },
             ],
@@ -4323,6 +4402,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 848,
+        "offset": 0,
         "type": 2,
       },
       "hash": "3301d2d6bbf180a4c5aefeedf317da9a118b911f87013b50c81c19331c43f055",
@@ -4330,6 +4411,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
     },
     {
       "body": {
+        "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
         "instructions": [
           {
             "arguments": [
@@ -4397,6 +4479,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                 "instructions": [
                   {
                     "arguments": [],
@@ -4428,6 +4511,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 128,
+                "offset": 88,
                 "type": 2,
               },
             ],
@@ -4465,6 +4550,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                 "instructions": [
                   {
                     "arguments": [],
@@ -4496,6 +4582,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 176,
+                "offset": 152,
                 "type": 2,
               },
             ],
@@ -4537,6 +4625,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                 "instructions": [
                   {
                     "arguments": [],
@@ -4891,6 +4980,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                         "instructions": [
                           {
                             "arguments": [],
@@ -4901,6 +4991,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 712,
+                        "offset": 704,
                         "type": 2,
                       },
                     ],
@@ -4913,6 +5005,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                         "instructions": [
                           {
                             "arguments": [],
@@ -4931,6 +5024,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 736,
+                        "offset": 720,
                         "type": 2,
                       },
                     ],
@@ -5365,6 +5460,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "e455b757b0487f75f3f80cfe7533c8d87422f32e4c57e511619edbc97952174b",
                         "instructions": [
                           {
                             "arguments": [
@@ -5409,6 +5505,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 504,
+                        "offset": 464,
                         "type": 2,
                       },
                     ],
@@ -5421,6 +5519,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "e455b757b0487f75f3f80cfe7533c8d87422f32e4c57e511619edbc97952174b",
                         "instructions": [
                           {
                             "arguments": [
@@ -5462,6 +5561,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 544,
+                        "offset": 512,
                         "type": 2,
                       },
                     ],
@@ -5761,6 +5862,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 840,
+                "offset": 224,
                 "type": 2,
               },
             ],
@@ -5839,6 +5942,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
                 "instructions": [
                   {
                     "arguments": [],
@@ -5904,6 +6008,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 920,
+                "offset": 880,
                 "type": 2,
               },
             ],
@@ -5945,6 +6051,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
           {
             "arguments": [
               {
+                "hash": "1f0202c41a2c007bdeec3b8c5d7dcda39897525bae04e3c3a3866cd5017d9b9a",
                 "instructions": [
                   {
                     "arguments": [],
@@ -5994,6 +6101,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "1f0202c41a2c007bdeec3b8c5d7dcda39897525bae04e3c3a3866cd5017d9b9a",
                         "instructions": [
                           {
                             "arguments": [],
@@ -6025,6 +6133,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 352,
+                        "offset": 320,
                         "type": 2,
                       },
                     ],
@@ -6074,6 +6184,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "1f0202c41a2c007bdeec3b8c5d7dcda39897525bae04e3c3a3866cd5017d9b9a",
                         "instructions": [
                           {
                             "arguments": [],
@@ -6147,6 +6258,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 712,
+                        "offset": 656,
                         "type": 2,
                       },
                     ],
@@ -6196,6 +6309,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "e9b224e4ab33c85009948417501a4f6de100f5b08b7f31e642402e582b1bead1",
                         "instructions": [
                           {
                             "arguments": [],
@@ -6269,6 +6383,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 64,
+                        "offset": 8,
                         "type": 2,
                       },
                     ],
@@ -6310,6 +6426,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                   {
                     "arguments": [
                       {
+                        "hash": "e9b224e4ab33c85009948417501a4f6de100f5b08b7f31e642402e582b1bead1",
                         "instructions": [
                           {
                             "arguments": [],
@@ -6341,6 +6458,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                             "type": 3,
                           },
                         ],
+                        "length": 392,
+                        "offset": 360,
                         "type": 2,
                       },
                     ],
@@ -6359,6 +6478,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
                     "type": 3,
                   },
                 ],
+                "length": 400,
+                "offset": 0,
                 "type": 2,
               },
             ],
@@ -6432,6 +6553,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 40,
+        "offset": 0,
         "type": 2,
       },
       "hash": "e3ac26e214db4b5d3d574c8b7401a82970c86c20db871c8d7f8696ff62d69841",
@@ -6439,6 +6562,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
     },
     {
       "body": {
+        "hash": "b2f99ae1a1dd4dfb3c18a3363dc2ef1af976953e844d970f5eb4c597227b2c55",
         "instructions": [
           {
             "arguments": [
@@ -6454,6 +6578,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 8,
+        "offset": 0,
         "type": 2,
       },
       "hash": "b2f99ae1a1dd4dfb3c18a3363dc2ef1af976953e844d970f5eb4c597227b2c55",
@@ -6461,6 +6587,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
     },
     {
       "body": {
+        "hash": "44086a5ce86162fe9871990921a1899c14a6945e8e1aa59196b86b89f254e8d6",
         "instructions": [
           {
             "arguments": [],
@@ -6471,6 +6598,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 8,
+        "offset": 0,
         "type": 2,
       },
       "hash": "44086a5ce86162fe9871990921a1899c14a6945e8e1aa59196b86b89f254e8d6",
@@ -6478,6 +6607,7 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
     },
     {
       "body": {
+        "hash": "40d98146a47dbe3bbc9c7205450b5da355c567deb3ea11d30a74c85ef592e945",
         "instructions": [
           {
             "arguments": [],
@@ -6488,6 +6618,8 @@ exports[`decompileAll should decompile wallet (AST) 1`] = `
             "type": 3,
           },
         ],
+        "length": 8,
+        "offset": 0,
         "type": 2,
       },
       "hash": "40d98146a47dbe3bbc9c7205450b5da355c567deb3ea11d30a74c85ef592e945",
@@ -7083,183 +7215,189 @@ exports[`decompileAll should decompile wallet 1`] = `
 `;
 
 exports[`decompileAll should decompile wallet v1 1`] = `
-"SETCP0
-DUP
-IFNOTRET
-INC
-32 THROWIF
-512 PUSHINT
-LDSLICEX
-DUP
-32 PLDU
-c4 PUSH
-CTOS
-32 LDU
-256 LDU
-ENDS
-s1 s2 XCPU
-EQUAL
-33 THROWIFNOT
-s2 PUSH
-HASHSU
-s0 s4 s4 XC2PU
-CHKSIGNU
-34 THROWIFNOT
-ACCEPT
-SWAP
-32 LDU
-NIP
-DUP
-SREFS
-<{
-  8 LDU
-  LDREF
-  s0 s2 XCHG
-  SENDRAWMSG
-}> PUSHCONT
-IF
-ENDS
-INC
-NEWC
-32 STU
-256 STU
-ENDC
-c4 POP"
+"<{
+  SETCP0
+  DUP
+  IFNOTRET
+  INC
+  32 THROWIF
+  512 PUSHINT
+  LDSLICEX
+  DUP
+  32 PLDU
+  c4 PUSH
+  CTOS
+  32 LDU
+  256 LDU
+  ENDS
+  s1 s2 XCPU
+  EQUAL
+  33 THROWIFNOT
+  s2 PUSH
+  HASHSU
+  s0 s4 s4 XC2PU
+  CHKSIGNU
+  34 THROWIFNOT
+  ACCEPT
+  SWAP
+  32 LDU
+  NIP
+  DUP
+  SREFS
+  <{
+    8 LDU
+    LDREF
+    s0 s2 XCHG
+    SENDRAWMSG
+  }> PUSHCONT
+  IF
+  ENDS
+  INC
+  NEWC
+  32 STU
+  256 STU
+  ENDC
+  c4 POP
+}>"
 `;
 
 exports[`decompileAll should decompile wallet v2 1`] = `
-"SETCP0
-DUP
-IFNOTRET
-DUP
-85143 PUSHINT
-EQUAL
-<{
-  DROP
+"<{
+  SETCP0
+  DUP
+  IFNOTRET
+  DUP
+  85143 PUSHINT
+  EQUAL
+  <{
+    DROP
+    c4 PUSH
+    CTOS
+    32 PLDU
+  }> PUSHCONT
+  IFJMP
+  INC
+  32 THROWIF
+  9 PUSHPOW2
+  LDSLICEX
+  DUP
+  32 LDU
+  32 LDU
+  SWAP
+  NOW
+  LEQ
+  35 THROWIF
   c4 PUSH
   CTOS
-  32 PLDU
-}> PUSHCONT
-IFJMP
-INC
-32 THROWIF
-9 PUSHPOW2
-LDSLICEX
-DUP
-32 LDU
-32 LDU
-SWAP
-NOW
-LEQ
-35 THROWIF
-c4 PUSH
-CTOS
-32 LDU
-256 LDU
-ENDS
-s3 s1 XCPU
-EQUAL
-33 THROWIFNOT
-s0 s3 XCHG
-HASHSU
-s0 s4 s2 XC2PU
-CHKSIGNU
-34 THROWIFNOT
-ACCEPT
-s0 s2 XCHG
-<{
-  DUP
-  SREFS
-}> PUSHCONT
-<{
-  8 LDU
-  LDREF
+  32 LDU
+  256 LDU
+  ENDS
+  s3 s1 XCPU
+  EQUAL
+  33 THROWIFNOT
+  s0 s3 XCHG
+  HASHSU
+  s0 s4 s2 XC2PU
+  CHKSIGNU
+  34 THROWIFNOT
+  ACCEPT
   s0 s2 XCHG
-  SENDRAWMSG
-}> PUSHCONT
-WHILE
-ENDS
-INC
-NEWC
-32 STU
-256 STU
-ENDC
-c4 POP"
+  <{
+    DUP
+    SREFS
+  }> PUSHCONT
+  <{
+    8 LDU
+    LDREF
+    s0 s2 XCHG
+    SENDRAWMSG
+  }> PUSHCONT
+  WHILE
+  ENDS
+  INC
+  NEWC
+  32 STU
+  256 STU
+  ENDC
+  c4 POP
+}>"
 `;
 
 exports[`decompileAll should decompile wallet v3 1`] = `
-"SETCP0
-DUP
-IFNOTRET
-DUP
-85143 PUSHINT
-EQUAL
-OVER
-78748 PUSHINT
-EQUAL
-OR
-<{
-  1 PUSHINT
-  AND
+"<{
+  SETCP0
+  DUP
+  IFNOTRET
+  DUP
+  85143 PUSHINT
+  EQUAL
+  OVER
+  78748 PUSHINT
+  EQUAL
+  OR
+  <{
+    1 PUSHINT
+    AND
+    c4 PUSH
+    CTOS
+    32 LDU
+    32 LDU
+    NIP
+    256 PLDU
+    CONDSEL
+  }> PUSHCONT
+  IFJMP
+  INC
+  32 THROWIF
+  9 PUSHPOW2
+  LDSLICEX
+  DUP
+  32 LDU
+  32 LDU
+  32 LDU
+  NOW
+  s1 s3 XCHG
+  LEQ
+  35 THROWIF
   c4 PUSH
   CTOS
   32 LDU
   32 LDU
-  NIP
-  256 PLDU
-  CONDSEL
-}> PUSHCONT
-IFJMP
-INC
-32 THROWIF
-9 PUSHPOW2
-LDSLICEX
-DUP
-32 LDU
-32 LDU
-32 LDU
-NOW
-s1 s3 XCHG
-LEQ
-35 THROWIF
-c4 PUSH
-CTOS
-32 LDU
-32 LDU
-256 LDU
-ENDS
-s3 s2 XCPU
-EQUAL
-33 THROWIFNOT
-s4 s4 XCPU
-EQUAL
-34 THROWIFNOT
-s0 s4 XCHG
-HASHSU
-s0 s5 s5 XC2PU
-CHKSIGNU
-35 THROWIFNOT
-ACCEPT
-<{
-  DUP
-  SREFS
-}> PUSHCONT
-<{
-  8 LDU
-  LDREF
-  s0 s2 XCHG
-  SENDRAWMSG
-}> PUSHCONT
-WHILE
-ENDS
-SWAP
-INC
-NEWC
-32 STU
-32 STU
-256 STU
-ENDC
-c4 POP"
+  256 LDU
+  ENDS
+  s3 s2 XCPU
+  EQUAL
+  33 THROWIFNOT
+  s4 s4 XCPU
+  EQUAL
+  34 THROWIFNOT
+  s0 s4 XCHG
+  HASHSU
+  s0 s5 s5 XC2PU
+  CHKSIGNU
+  35 THROWIFNOT
+  ACCEPT
+  <{
+    DUP
+    SREFS
+  }> PUSHCONT
+  <{
+    8 LDU
+    LDREF
+    s0 s2 XCHG
+    SENDRAWMSG
+  }> PUSHCONT
+  WHILE
+  ENDS
+  SWAP
+  INC
+  NEWC
+  32 STU
+  32 STU
+  256 STU
+  ENDC
+  c4 POP
+}>"
 `;
 
 exports[`decompileAll should decompile wallet v4 1`] = `

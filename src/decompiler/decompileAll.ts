@@ -157,7 +157,6 @@ function decompileCell(args: {
 
       // Special cases for continuations
       case 'IFREFELSE':
-      case 'CALLREF':
       case 'IFJMPREF':
       case 'IFREF':
       case 'IFNOTREF':
@@ -266,7 +265,14 @@ function decompileCell(args: {
     }
   });
 
-  return AST.block(instructions);
+  const lastInstruction = instructions[instructions.length - 1];
+
+  return AST.block(
+    instructions,
+    args.source.hash().toString('hex'),
+    args.offset.bits,
+    lastInstruction.offset + lastInstruction.length,
+  );
 }
 
 export function decompileAll(source: Cell) {

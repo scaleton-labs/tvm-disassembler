@@ -28,6 +28,10 @@ export class Writer {
   }
 
   end() {
+    if (this.#currentLine !== '') {
+      this.newLine();
+    }
+
     return this.#lines.join('\n');
   }
 }

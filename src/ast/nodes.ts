@@ -65,14 +65,17 @@ export type InstructionNode = {
 export type BlockNode = {
   type: NodeType.BLOCK;
   instructions: InstructionNode[];
+  hash: string;
+  offset: number;
+  length: number;
 };
 
 export type MethodNode = {
   type: NodeType.METHOD;
   id: number;
   body: BlockNode;
-  sourceHash: string;
-  sourceOffset: number;
+  hash: string;
+  offset: number;
 };
 
 export type ProcedureNode = {

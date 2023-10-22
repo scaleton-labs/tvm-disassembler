@@ -1,5 +1,5 @@
-import { DebugSymbols } from '@scaleton/func-debug-symbols';
-import { Writer } from '../utils/Writer';
+import {DebugSymbols} from '@scaleton/func-debug-symbols';
+import {Writer} from '../utils/Writer';
 import {
   BlockNode,
   InstructionNode,
@@ -69,23 +69,29 @@ export class AssemblerWriter {
   }
 
   writeMethodNode(node: MethodNode) {
-    this.#writer.writeLine(`${this.resolveMethodName(node.id)} PROC:<{`);
-    this.#writer.indent(() => this.writeBlockNode(node.body));
-    this.#writer.writeLine('}>');
+    const methodName = this.resolveMethodName(node.id);
+
+    this.#writer.write(`${methodName} PROC:`);
+    this.writeBlockNode(node.body);
+    this.#writer.newLine();
   }
 
   writeProcedureNode(node: ProcedureNode) {
-    this.#writer.writeLine(
-      `${this.resolveProcedureName(node.hash)} PROCREF:<{`,
-    );
-    this.#writer.indent(() => this.writeBlockNode(node.body));
-    this.#writer.writeLine('}>');
+    const procedureName = this.resolveProcedureName(node.hash);
+
+    this.#writer.write(`${procedureName} PROCREF:`);
+    this.writeBlockNode(node.body);
+    this.#writer.newLine();
   }
 
   writeBlockNode(node: BlockNode) {
-    node.instructions.forEach((instruction) =>
-      this.writeInstructionNode(instruction),
-    );
+    this.#writer.writeLine('<{');
+    this.#writer.indent(() => {
+      for (const instruction of node.instructions) {
+        this.writeInstructionNode(instruction);
+      }
+    });
+    this.#writer.write('}>');
   }
 
   writeInstructionNode(node: InstructionNode) {
@@ -116,9 +122,8 @@ export class AssemblerWriter {
           break;
 
         case NodeType.BLOCK:
-          this.#writer.writeLine(`<{`);
-          this.#writer.indent(() => this.writeBlockNode(arg));
-          this.#writer.write(`}> `);
+          this.writeBlockNode(arg);
+          this.#writer.write(' ');
           break;
       }
     });

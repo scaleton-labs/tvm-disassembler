@@ -35,8 +35,8 @@ export class AST {
       type: NodeType.METHOD,
       id,
       body,
-      sourceHash,
-      sourceOffset,
+      hash: sourceHash,
+      offset: sourceOffset,
     };
   }
 
@@ -48,10 +48,18 @@ export class AST {
     };
   }
 
-  static block(instructions: InstructionNode[]): BlockNode {
+  static block(
+    instructions: InstructionNode[],
+    hash: string,
+    offset: number,
+    length: number,
+  ): BlockNode {
     return {
       type: NodeType.BLOCK,
       instructions,
+      hash,
+      offset,
+      length,
     };
   }
 
